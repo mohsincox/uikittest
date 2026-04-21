@@ -1,0 +1,1050 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0A5E3411AE430A8851F26DB9 /* TNPostFormContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D36D8C442A331FB28F85160 /* TNPostFormContentView.swift */; };
+		1B7F0D0540F23B130D77124E /* TNAppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D172FBF6DEBF2ED4FCC92A2 /* TNAppCoordinator.swift */; };
+		1F6547D65293304410DCC9DE /* TNAuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADD5993D74B38C2498406F1 /* TNAuthCoordinator.swift */; };
+		20B348DEBE35C754CEF5A2F0 /* TNRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A722E5A0BE067CCE8C5CCC /* TNRouter.swift */; };
+		219743B94480B30208243100 /* TNProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8814526A2A4FE7E4760372CA /* TNProfileCoordinator.swift */; };
+		2349C9539DAC1F2E726F6DDB /* TNPostsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652F0BA6C3CAA6D833242240 /* TNPostsCoordinator.swift */; };
+		2595D35EA38CB0A628157BAE /* TNMainTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3C6AB6CB8B1FDEAD7D1131 /* TNMainTabViewController.swift */; };
+		2623EFAC77C161F80BF156A8 /* TNPostsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B87792CD0A1C9EF5C02A4F /* TNPostsListViewModel.swift */; };
+		2A0D3CE5A1512317BA1698EE /* URLS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540D0D46A7A7D8D1EBDB0893 /* URLS.swift */; };
+		2D94C332763407430C8D1800 /* TNConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A93913338D05CF6B7EB60B3 /* TNConstants.swift */; };
+		371533F72C143F5D26B210E8 /* TNPostFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5272F5976A667932F9E63047 /* TNPostFormViewController.swift */; };
+		371BA2774A217D0A46F8B71E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA4C4451EEC5FF01B6DC6128 /* Assets.xcassets */; };
+		3726E169C9B93E682F295F64 /* TNController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0D11B8F70D05DD5FFB71B4 /* TNController.swift */; };
+		46B7D4F9DE06CD1E375B82D5 /* TNAuthResponseBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA2EFBDD24DD61FD44899D2 /* TNAuthResponseBody.swift */; };
+		522041F73F657E78B24140E4 /* TNLoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23838C10A8690C916721A1E /* TNLoginViewModel.swift */; };
+		5846E86F4CE81D695E2A780B /* TNTodosListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB2BF3C82325957CB5004E6 /* TNTodosListViewController.swift */; };
+		5C92D81E1DFF9513931C1889 /* TNAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A5649FFDDD4236BB5CEF08 /* TNAPIService.swift */; };
+		5CEC1C48C88FA3CC49EE7B57 /* TNCommonButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7476C9D4AE7DC0E5078FA2CE /* TNCommonButton.swift */; };
+		5E70AD9AABCE08FDA3940E82 /* KeychainStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EEEA02A2FBA9B410842583F /* KeychainStorageManager.swift */; };
+		5F12C4266656C5D253A077D3 /* TNTodoApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540900B86175B784257A3A86 /* TNTodoApiService.swift */; };
+		611754A1A45EE4ED60B6380A /* TNCreatePostRequestBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE11D67ADE5F5512743AF19D /* TNCreatePostRequestBody.swift */; };
+		67AB61BE012F60D6DFD6F557 /* TNRegisterContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81052432CEED9ADCEF8753A0 /* TNRegisterContentView.swift */; };
+		67B0632D0C5022FCB79868AA /* TNTodosListContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6353D2ECEE876BFE8AF7192 /* TNTodosListContentView.swift */; };
+		7028F5D33AED37633DF58842 /* AppResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A698C9CDBB5F03A59A77F6 /* AppResult.swift */; };
+		79E8F04434D677D38C0DCD4F /* TNStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72219CB346AAF4C97F12F69 /* TNStep.swift */; };
+		81C1E84F7AC0149E74FCBFC6 /* TNRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB248FD557DE8EA2229C253B /* TNRegisterViewController.swift */; };
+		82DFA108D79D55DD58994F01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFD34551D8B1C9A71482D5A /* AppDelegate.swift */; };
+		8380DF5D9EB1A2E6F3B23A77 /* TNPostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2527F1E533B5AC7965D05E4C /* TNPostDetailViewController.swift */; };
+		8B3BBBAEF0A3C2B80044951D /* TNTodoResponseBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B64618F1BCA017A77D83123 /* TNTodoResponseBody.swift */; };
+		93E0E7D3D584F1587C43E28D /* TNNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF401A8BF94B8A9805AFAE5 /* TNNavBar.swift */; };
+		994E1BF42787E1B0703AC446 /* TNLoginContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85AB0ACF7603506232A2A95 /* TNLoginContentView.swift */; };
+		9C11D4D2F815E3666C7CB738 /* TNPostResponseBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FC9BEE619EC84BA7AEA77C /* TNPostResponseBody.swift */; };
+		9E51308CC4FD716240474914 /* TNProfileContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D309B7E0D5C168960F6E2FF0 /* TNProfileContentView.swift */; };
+		9E9F30F179C1A59151659297 /* TNCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4E31A0846DC8E6C23639F7 /* TNCoordinator.swift */; };
+		A1F262CB0F3FC9D8BA062C4B /* TNTodosListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3435EBA5C08951AC5F31441 /* TNTodosListViewModel.swift */; };
+		A4ED269952436FB33B17125A /* TNPostDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5D7DFDEB690D7D21BD9713 /* TNPostDetailViewModel.swift */; };
+		A57890DE90067264DA7FB01D /* TNRegisterRequestBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BDF5D57C1C4E4EF8F2894B8 /* TNRegisterRequestBody.swift */; };
+		A8C5CA76FE663B07D909A797 /* TNAPIServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AF86D5F724A23A974FA673 /* TNAPIServiceProvider.swift */; };
+		AA239A2FA204F3F6A99CC14F /* TNTodosCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2C1D765B2C57C0A96492AD /* TNTodosCoordinator.swift */; };
+		ABC0AE550BCF428FDF172742 /* TNAuthApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A74C207005867BA95AD0F0 /* TNAuthApiService.swift */; };
+		AEF0AE99848BD768C2B8EC0A /* TNLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C216D4635B4AF51C235C9A /* TNLoginViewController.swift */; };
+		B098B492D6DEA7B473D93766 /* TNTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC76B261CBA67E95A6460D92 /* TNTextField.swift */; };
+		B4ECDC2BEF0DEE047DEE0789 /* TNPostFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53C13FD08889E9513B73BBE /* TNPostFormViewModel.swift */; };
+		BCFC7137ABED7382A245878F /* TNRegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 909BF6E81693758445EB6B51 /* TNRegisterViewModel.swift */; };
+		C145D795E82964C0889BF321 /* TNPostsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5270EA1B2CCC6EA44374063D /* TNPostsListViewController.swift */; };
+		C7E820C0DC82D30739B0B42E /* TNUpdatePostRequestBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB852458C11B4FE974E0783 /* TNUpdatePostRequestBody.swift */; };
+		C80FE60F5E370F10315AE45B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6F9F41AFEA5C77FFB937C1 /* SceneDelegate.swift */; };
+		C8B92E06615C57E650B09741 /* TNReorderTodosRequestBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = C577360284251610F5064BB8 /* TNReorderTodosRequestBody.swift */; };
+		CB90E14AAEB6DC20353F4D6B /* GlobalAPIServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5146B204F9B329C18C621DBC /* GlobalAPIServiceManager.swift */; };
+		CE61B63EB1F47D939733F962 /* TNProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DF912590A3652CB9F3CB6F /* TNProfileViewModel.swift */; };
+		D534BF60A1BFCA553E8AE0DA /* TNCreateTodoRequestBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256A37896F7529C3AF826D3F /* TNCreateTodoRequestBody.swift */; };
+		D8D025D237F7C44387771044 /* TNPostsListContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10016AA647631554D6E561C /* TNPostsListContentView.swift */; };
+		DB184037E212463AAD4948DB /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B92555ACCC9259008CDA92E /* NetworkError.swift */; };
+		E637CD68C2212BD54BE3D1FE /* TNUpdateTodoRequestBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3578156C6B6BD001C70A50C /* TNUpdateTodoRequestBody.swift */; };
+		E7627992F30AA4348D00C4DA /* TNMainTabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691A1A42243EB34625CDCB84 /* TNMainTabCoordinator.swift */; };
+		E8790A45D3C361943220DF8E /* TNLoginRequestBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = A087CE3A01BF31106010682F /* TNLoginRequestBody.swift */; };
+		F32F44259A12E7C179D369F7 /* TNViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2949A53D0D33FDF66FCCD779 /* TNViewModel.swift */; };
+		F5C99A6FAFE9F02C5EBF4495 /* TNProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C217731DD990D9263E1F886E /* TNProfileViewController.swift */; };
+		F68DAB277A2FF5DD27145DCA /* TNPostDetailContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98EC95C49AB0F6D030D586B /* TNPostDetailContentView.swift */; };
+		F6EF5945C8772305C18CF087 /* TNPostApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BCDC8C98D3BD8CB9558BBF /* TNPostApiService.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		08DF912590A3652CB9F3CB6F /* TNProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TNProfileViewModel.swift; sourceTree = "<group>"; };
+		0EB2BF3C82325957CB5004E6 /* TNTodosListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TNTodosListViewController.swift; sourceTree = "<group>"; };
+		0F3C6AB6CB8B1FDEAD7D1131 /* TNMainTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TNMainTabViewController.swift; sourceTree = "<group>"; };
+		1EEEA02A2FBA9B410842583F /* KeychainStorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainStorageManager.swift; sourceTree = "<group>"; };
+		1FBFA264BDE6E5ACEC9AC5BB /* LaraApp.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = LaraApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2527F1E533B5AC7965D05E4C /* TNPostDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TNPostDetailViewController.swift; sourceTree = "<group>"; };
+		256A37896F7529C3AF826D3F /* TNCreateTodoRequestBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TNCreateTodoRequestBody.swift; sourceTree = "<group>"; };
+		2949A53D0D33FDF66FCCD779 /* TNViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TNViewModel.swift; sourceTree = "<group>"; };
+		2ADD5993D74B38C2498406F1 /* TNAuthCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TNAuthCoordinator.swift; sourceTree = "<group>"; };
+		2BDF5D57C1C4E4EF8F2894B8 /* TNRegisterRequestBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TNRegisterRequestBody.swift; sourceTree = "<group>"; };
+		2D36D8C442A331FB28F85160 /* TNPostFormContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TNPostFormContentView.swift; sourceTree = "<group>"; };
+		4BF401A8BF94B8A9805AFAE5 /* TNNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TNNavBar.swift; sourceTree = "<group>"; };
+		5146B204F9B329C18C621DBC /* GlobalAPIServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalAPIServiceManager.swift; sourceTree = "<group>"; };
+		5270EA1B2CCC6EA44374063D /* TNPostsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TNPostsListViewController.swift; sourceTree = "<group>"; };
+		5272F5976A667932F9E63047 /* TNPostFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TNPostFormViewController.swift; sourceTree = "<group>"; };
+		540900B86175B784257A3A86 /* TNTodoApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TNTodoApiService.swift; sourceTree = "<group>"; };
+		540D0D46A7A7D8D1EBDB0893 /* URLS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLS.swift; sourceTree = "<group>"; };
+		59FC9BEE619EC84BA7AEA77C /* TNPostResponseBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TNPostResponseBody.swift; sourceTree = "<group>"; };
+		5B0D11B8F70D05DD5FFB71B4 /* TNController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TNController.swift; sourceTree = "<group>"; };
+		652F0BA6C3CAA6D833242240 /* TNPostsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TNPostsCoordinator.swift; sourceTree = "<group>"; };
+		691A1A42243EB34625CDCB84 /* TNMainTabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TNMainTabCoordinator.swift; sourceTree = "<group>"; };
+		6A2C1D765B2C57C0A96492AD /* TNTodosCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TNTodosCoordinator.swift; sourceTree = "<group>"; };
+		6D172FBF6DEBF2ED4FCC92A2 /* TNAppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TNAppCoordinator.swift; sourceTree = "<group>"; };
+		7476C9D4AE7DC0E5078FA2CE /* TNCommonButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TNCommonButton.swift; sourceTree = "<group>"; };
+		77BCDC8C98D3BD8CB9558BBF /* TNPostApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TNPostApiService.swift; sourceTree = "<group>"; };
+		7CFD34551D8B1C9A71482D5A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		81052432CEED9ADCEF8753A0 /* TNRegisterContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TNRegisterContentView.swift; sourceTree = "<group>"; };
+		8814526A2A4FE7E4760372CA /* TNProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TNProfileCoordinator.swift; sourceTree = "<group>"; };
+		88AF86D5F724A23A974FA673 /* TNAPIServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TNAPIServiceProvider.swift; sourceTree = "<group>"; };
+		8B5D7DFDEB690D7D21BD9713 /* TNPostDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TNPostDetailViewModel.swift; sourceTree = "<group>"; };
+		909BF6E81693758445EB6B51 /* TNRegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TNRegisterViewModel.swift; sourceTree = "<group>"; };
+		95A722E5A0BE067CCE8C5CCC /* TNRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TNRouter.swift; sourceTree = "<group>"; };
+		98A74C207005867BA95AD0F0 /* TNAuthApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TNAuthApiService.swift; sourceTree = "<group>"; };
+		9A93913338D05CF6B7EB60B3 /* TNConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TNConstants.swift; sourceTree = "<group>"; };
+		9B64618F1BCA017A77D83123 /* TNTodoResponseBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TNTodoResponseBody.swift; sourceTree = "<group>"; };
+		9B92555ACCC9259008CDA92E /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		9DA2EFBDD24DD61FD44899D2 /* TNAuthResponseBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TNAuthResponseBody.swift; sourceTree = "<group>"; };
+		A087CE3A01BF31106010682F /* TNLoginRequestBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TNLoginRequestBody.swift; sourceTree = "<group>"; };
+		A10016AA647631554D6E561C /* TNPostsListContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TNPostsListContentView.swift; sourceTree = "<group>"; };
+		A3435EBA5C08951AC5F31441 /* TNTodosListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TNTodosListViewModel.swift; sourceTree = "<group>"; };
+		A3A5649FFDDD4236BB5CEF08 /* TNAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TNAPIService.swift; sourceTree = "<group>"; };
+		A4C216D4635B4AF51C235C9A /* TNLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TNLoginViewController.swift; sourceTree = "<group>"; };
+		A98EC95C49AB0F6D030D586B /* TNPostDetailContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TNPostDetailContentView.swift; sourceTree = "<group>"; };
+		AA4C4451EEC5FF01B6DC6128 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B53C13FD08889E9513B73BBE /* TNPostFormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TNPostFormViewModel.swift; sourceTree = "<group>"; };
+		B72219CB346AAF4C97F12F69 /* TNStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TNStep.swift; sourceTree = "<group>"; };
+		B85AB0ACF7603506232A2A95 /* TNLoginContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TNLoginContentView.swift; sourceTree = "<group>"; };
+		BB248FD557DE8EA2229C253B /* TNRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TNRegisterViewController.swift; sourceTree = "<group>"; };
+		C217731DD990D9263E1F886E /* TNProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TNProfileViewController.swift; sourceTree = "<group>"; };
+		C577360284251610F5064BB8 /* TNReorderTodosRequestBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TNReorderTodosRequestBody.swift; sourceTree = "<group>"; };
+		CE11D67ADE5F5512743AF19D /* TNCreatePostRequestBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TNCreatePostRequestBody.swift; sourceTree = "<group>"; };
+		CE4E31A0846DC8E6C23639F7 /* TNCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TNCoordinator.swift; sourceTree = "<group>"; };
+		CE6F9F41AFEA5C77FFB937C1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		D0A698C9CDBB5F03A59A77F6 /* AppResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppResult.swift; sourceTree = "<group>"; };
+		D1B87792CD0A1C9EF5C02A4F /* TNPostsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TNPostsListViewModel.swift; sourceTree = "<group>"; };
+		D309B7E0D5C168960F6E2FF0 /* TNProfileContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TNProfileContentView.swift; sourceTree = "<group>"; };
+		D6353D2ECEE876BFE8AF7192 /* TNTodosListContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TNTodosListContentView.swift; sourceTree = "<group>"; };
+		DC76B261CBA67E95A6460D92 /* TNTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TNTextField.swift; sourceTree = "<group>"; };
+		E3578156C6B6BD001C70A50C /* TNUpdateTodoRequestBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TNUpdateTodoRequestBody.swift; sourceTree = "<group>"; };
+		F23838C10A8690C916721A1E /* TNLoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TNLoginViewModel.swift; sourceTree = "<group>"; };
+		FEB852458C11B4FE974E0783 /* TNUpdatePostRequestBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TNUpdatePostRequestBody.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		0BACFD9683765E5ACEBDFFA9 /* posts */ = {
+			isa = PBXGroup;
+			children = (
+				430870337B0D8559D8A71125 /* api-service */,
+				6BC252677642B077547B764F /* coordinator */,
+				F33E8623E544A98484CA34F4 /* modules */,
+			);
+			path = posts;
+			sourceTree = "<group>";
+		};
+		0FE2F8AC6CF7BD4079562CF5 /* LaraApp */ = {
+			isa = PBXGroup;
+			children = (
+				AA4C4451EEC5FF01B6DC6128 /* Assets.xcassets */,
+				FA8ABAB8688E5BCF597936EF /* app-architecture */,
+				A242035F445D83045D1A334B /* app-common-components */,
+				4D9D67F4658C7AEB6AF9DD07 /* app-modules */,
+				D3854A76EF1F9F7A8280FD6D /* app-repository */,
+				2290D57A3DD003FA1B545E78 /* app-root */,
+				CCA0435AD4B262550B9F99D1 /* app-settings */,
+				C6864931215A2233C628CCA7 /* app-utilities */,
+			);
+			path = LaraApp;
+			sourceTree = "<group>";
+		};
+		12EEC72BA01E35D673E1375A /* coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				691A1A42243EB34625CDCB84 /* TNMainTabCoordinator.swift */,
+			);
+			path = coordinator;
+			sourceTree = "<group>";
+		};
+		1563FE05CB54C528BDE26E73 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				59FC9BEE619EC84BA7AEA77C /* TNPostResponseBody.swift */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		1F37AE89BEAC9C0ABAF06CF7 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				A98EC95C49AB0F6D030D586B /* TNPostDetailContentView.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		203B6A84E3B60527D3DC91B9 /* viewmodel */ = {
+			isa = PBXGroup;
+			children = (
+				F23838C10A8690C916721A1E /* TNLoginViewModel.swift */,
+			);
+			path = viewmodel;
+			sourceTree = "<group>";
+		};
+		2290D57A3DD003FA1B545E78 /* app-root */ = {
+			isa = PBXGroup;
+			children = (
+				7CFD34551D8B1C9A71482D5A /* AppDelegate.swift */,
+				CE6F9F41AFEA5C77FFB937C1 /* SceneDelegate.swift */,
+				6D172FBF6DEBF2ED4FCC92A2 /* TNAppCoordinator.swift */,
+			);
+			path = "app-root";
+			sourceTree = "<group>";
+		};
+		331D493AA3581AE96B37C2C0 /* coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				8814526A2A4FE7E4760372CA /* TNProfileCoordinator.swift */,
+			);
+			path = coordinator;
+			sourceTree = "<group>";
+		};
+		345BB0D1F447BD8FE8ACE086 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				CE11D67ADE5F5512743AF19D /* TNCreatePostRequestBody.swift */,
+				FEB852458C11B4FE974E0783 /* TNUpdatePostRequestBody.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		42F0C23ABF743542539C49B2 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				D309B7E0D5C168960F6E2FF0 /* TNProfileContentView.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		430870337B0D8559D8A71125 /* api-service */ = {
+			isa = PBXGroup;
+			children = (
+				77BCDC8C98D3BD8CB9558BBF /* TNPostApiService.swift */,
+				345BB0D1F447BD8FE8ACE086 /* Request */,
+				1563FE05CB54C528BDE26E73 /* Response */,
+			);
+			path = "api-service";
+			sourceTree = "<group>";
+		};
+		4492A524BFA2F75ADDCDD341 /* api-service */ = {
+			isa = PBXGroup;
+			children = (
+				540900B86175B784257A3A86 /* TNTodoApiService.swift */,
+				5F91B1BD7CB8B1EA14080183 /* Request */,
+				7E1B2566CF5D615B3213958C /* Response */,
+			);
+			path = "api-service";
+			sourceTree = "<group>";
+		};
+		4A679035C3D5B696E59D343E /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				5272F5976A667932F9E63047 /* TNPostFormViewController.swift */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		4D9D67F4658C7AEB6AF9DD07 /* app-modules */ = {
+			isa = PBXGroup;
+			children = (
+				63845EA9B75201F2639EC96B /* authentication */,
+				CCD05B279A074095929746D0 /* main-tab */,
+				0BACFD9683765E5ACEBDFFA9 /* posts */,
+				62437C5CFE4B52BDEC0A7B96 /* profile */,
+				C2C1514084885ED78ACBE272 /* todos */,
+			);
+			path = "app-modules";
+			sourceTree = "<group>";
+		};
+		5034AF6FCEC1B3478EA760E2 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				D6353D2ECEE876BFE8AF7192 /* TNTodosListContentView.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		50E1A071CFA9C895A4481C31 /* coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				2ADD5993D74B38C2498406F1 /* TNAuthCoordinator.swift */,
+			);
+			path = coordinator;
+			sourceTree = "<group>";
+		};
+		5171D14B560068B1481F3CA9 /* base */ = {
+			isa = PBXGroup;
+			children = (
+				5B0D11B8F70D05DD5FFB71B4 /* TNController.swift */,
+				CE4E31A0846DC8E6C23639F7 /* TNCoordinator.swift */,
+				95A722E5A0BE067CCE8C5CCC /* TNRouter.swift */,
+				2949A53D0D33FDF66FCCD779 /* TNViewModel.swift */,
+			);
+			path = base;
+			sourceTree = "<group>";
+		};
+		52D00DA9C65C173ED585B5D5 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				B85AB0ACF7603506232A2A95 /* TNLoginContentView.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		54E678275FCAEE7DF3F3992C /* modules */ = {
+			isa = PBXGroup;
+			children = (
+				EE382391D0A99C729B0DD193 /* list */,
+			);
+			path = modules;
+			sourceTree = "<group>";
+		};
+		56BA01200069A796C8898142 /* viewmodel */ = {
+			isa = PBXGroup;
+			children = (
+				08DF912590A3652CB9F3CB6F /* TNProfileViewModel.swift */,
+			);
+			path = viewmodel;
+			sourceTree = "<group>";
+		};
+		56C9B4C795AFF7C8413894D9 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				2527F1E533B5AC7965D05E4C /* TNPostDetailViewController.swift */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		59066DC150A794BDA3D7928B /* list */ = {
+			isa = PBXGroup;
+			children = (
+				8F6C13BAABBE77E1886800BC /* controller */,
+				C28F2E69923627B8EA372F62 /* view */,
+				717765ACDB378DA57FE4CE46 /* viewmodel */,
+			);
+			path = list;
+			sourceTree = "<group>";
+		};
+		5F91B1BD7CB8B1EA14080183 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				256A37896F7529C3AF826D3F /* TNCreateTodoRequestBody.swift */,
+				C577360284251610F5064BB8 /* TNReorderTodosRequestBody.swift */,
+				E3578156C6B6BD001C70A50C /* TNUpdateTodoRequestBody.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		62437C5CFE4B52BDEC0A7B96 /* profile */ = {
+			isa = PBXGroup;
+			children = (
+				331D493AA3581AE96B37C2C0 /* coordinator */,
+				7FEE3A2B5768C918D685C22A /* modules */,
+			);
+			path = profile;
+			sourceTree = "<group>";
+		};
+		63845EA9B75201F2639EC96B /* authentication */ = {
+			isa = PBXGroup;
+			children = (
+				D971BAEE69DB177E1DF49586 /* api-service */,
+				50E1A071CFA9C895A4481C31 /* coordinator */,
+				F85E8C111D6179E4B74AA3C8 /* modules */,
+			);
+			path = authentication;
+			sourceTree = "<group>";
+		};
+		6937BA5B321031A64F25FA56 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1FBFA264BDE6E5ACEC9AC5BB /* LaraApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6BC252677642B077547B764F /* coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				652F0BA6C3CAA6D833242240 /* TNPostsCoordinator.swift */,
+			);
+			path = coordinator;
+			sourceTree = "<group>";
+		};
+		717765ACDB378DA57FE4CE46 /* viewmodel */ = {
+			isa = PBXGroup;
+			children = (
+				D1B87792CD0A1C9EF5C02A4F /* TNPostsListViewModel.swift */,
+			);
+			path = viewmodel;
+			sourceTree = "<group>";
+		};
+		7E1B2566CF5D615B3213958C /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				9B64618F1BCA017A77D83123 /* TNTodoResponseBody.swift */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		7FEE3A2B5768C918D685C22A /* modules */ = {
+			isa = PBXGroup;
+			children = (
+				B22E7CE4900198F58111D83B /* main */,
+			);
+			path = modules;
+			sourceTree = "<group>";
+		};
+		8644FD5FB5C31CE08A42F2E2 /* viewmodel */ = {
+			isa = PBXGroup;
+			children = (
+				B53C13FD08889E9513B73BBE /* TNPostFormViewModel.swift */,
+			);
+			path = viewmodel;
+			sourceTree = "<group>";
+		};
+		8BD779C138FCF826C800DFC9 /* coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				6A2C1D765B2C57C0A96492AD /* TNTodosCoordinator.swift */,
+			);
+			path = coordinator;
+			sourceTree = "<group>";
+		};
+		8F6C13BAABBE77E1886800BC /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				5270EA1B2CCC6EA44374063D /* TNPostsListViewController.swift */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		9B730212BD58DB947C417C11 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				0F3C6AB6CB8B1FDEAD7D1131 /* TNMainTabViewController.swift */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		A04047A917F0238E02F67241 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				A4C216D4635B4AF51C235C9A /* TNLoginViewController.swift */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		A242035F445D83045D1A334B /* app-common-components */ = {
+			isa = PBXGroup;
+			children = (
+				7476C9D4AE7DC0E5078FA2CE /* TNCommonButton.swift */,
+				4BF401A8BF94B8A9805AFAE5 /* TNNavBar.swift */,
+				DC76B261CBA67E95A6460D92 /* TNTextField.swift */,
+			);
+			path = "app-common-components";
+			sourceTree = "<group>";
+		};
+		A39B162CDD0C6DE772618183 /* viewmodel */ = {
+			isa = PBXGroup;
+			children = (
+				8B5D7DFDEB690D7D21BD9713 /* TNPostDetailViewModel.swift */,
+			);
+			path = viewmodel;
+			sourceTree = "<group>";
+		};
+		ABC5697D3802C352FE3EB7CB /* network */ = {
+			isa = PBXGroup;
+			children = (
+				5146B204F9B329C18C621DBC /* GlobalAPIServiceManager.swift */,
+				A3A5649FFDDD4236BB5CEF08 /* TNAPIService.swift */,
+				88AF86D5F724A23A974FA673 /* TNAPIServiceProvider.swift */,
+				BCE0BF9CC34FF9986F3D02C8 /* error */,
+			);
+			path = network;
+			sourceTree = "<group>";
+		};
+		B22E7CE4900198F58111D83B /* main */ = {
+			isa = PBXGroup;
+			children = (
+				C224EFFB090FB935600EBF3B /* controller */,
+				42F0C23ABF743542539C49B2 /* view */,
+				56BA01200069A796C8898142 /* viewmodel */,
+			);
+			path = main;
+			sourceTree = "<group>";
+		};
+		BCE0BF9CC34FF9986F3D02C8 /* error */ = {
+			isa = PBXGroup;
+			children = (
+				D0A698C9CDBB5F03A59A77F6 /* AppResult.swift */,
+				9B92555ACCC9259008CDA92E /* NetworkError.swift */,
+			);
+			path = error;
+			sourceTree = "<group>";
+		};
+		C224EFFB090FB935600EBF3B /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				C217731DD990D9263E1F886E /* TNProfileViewController.swift */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		C28F2E69923627B8EA372F62 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				A10016AA647631554D6E561C /* TNPostsListContentView.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		C2C1514084885ED78ACBE272 /* todos */ = {
+			isa = PBXGroup;
+			children = (
+				4492A524BFA2F75ADDCDD341 /* api-service */,
+				8BD779C138FCF826C800DFC9 /* coordinator */,
+				54E678275FCAEE7DF3F3992C /* modules */,
+			);
+			path = todos;
+			sourceTree = "<group>";
+		};
+		C50CF72A3AB3E9F60EFC9F8E /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				0EB2BF3C82325957CB5004E6 /* TNTodosListViewController.swift */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		C6864931215A2233C628CCA7 /* app-utilities */ = {
+			isa = PBXGroup;
+			children = (
+				9A93913338D05CF6B7EB60B3 /* TNConstants.swift */,
+			);
+			path = "app-utilities";
+			sourceTree = "<group>";
+		};
+		CA45AEBCEAB77220648D66B1 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				81052432CEED9ADCEF8753A0 /* TNRegisterContentView.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		CCA0435AD4B262550B9F99D1 /* app-settings */ = {
+			isa = PBXGroup;
+			children = (
+				540D0D46A7A7D8D1EBDB0893 /* URLS.swift */,
+			);
+			path = "app-settings";
+			sourceTree = "<group>";
+		};
+		CCD05B279A074095929746D0 /* main-tab */ = {
+			isa = PBXGroup;
+			children = (
+				9B730212BD58DB947C417C11 /* controller */,
+				12EEC72BA01E35D673E1375A /* coordinator */,
+			);
+			path = "main-tab";
+			sourceTree = "<group>";
+		};
+		CD3DED35E44509525C57AC04 /* create-edit */ = {
+			isa = PBXGroup;
+			children = (
+				4A679035C3D5B696E59D343E /* controller */,
+				EE6C511685FEB809F583991F /* view */,
+				8644FD5FB5C31CE08A42F2E2 /* viewmodel */,
+			);
+			path = "create-edit";
+			sourceTree = "<group>";
+		};
+		CDCC283BD4EFB9C624382D66 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				BB248FD557DE8EA2229C253B /* TNRegisterViewController.swift */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		CEF01841C3822E16A3A692FC = {
+			isa = PBXGroup;
+			children = (
+				0FE2F8AC6CF7BD4079562CF5 /* LaraApp */,
+				6937BA5B321031A64F25FA56 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CF820CF2A37EDAEB67362E7E /* key-chain */ = {
+			isa = PBXGroup;
+			children = (
+				1EEEA02A2FBA9B410842583F /* KeychainStorageManager.swift */,
+			);
+			path = "key-chain";
+			sourceTree = "<group>";
+		};
+		D3854A76EF1F9F7A8280FD6D /* app-repository */ = {
+			isa = PBXGroup;
+			children = (
+				CF820CF2A37EDAEB67362E7E /* key-chain */,
+				ABC5697D3802C352FE3EB7CB /* network */,
+			);
+			path = "app-repository";
+			sourceTree = "<group>";
+		};
+		D3A89A55F93B71F68024A5EC /* register */ = {
+			isa = PBXGroup;
+			children = (
+				CDCC283BD4EFB9C624382D66 /* controller */,
+				CA45AEBCEAB77220648D66B1 /* view */,
+				FE18DA643ABFD6EBB7C5D868 /* viewmodel */,
+			);
+			path = register;
+			sourceTree = "<group>";
+		};
+		D6560952AB797647AF7B1BC1 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				9DA2EFBDD24DD61FD44899D2 /* TNAuthResponseBody.swift */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		D88CF6ED03E0A7D3F5383674 /* detail */ = {
+			isa = PBXGroup;
+			children = (
+				56C9B4C795AFF7C8413894D9 /* controller */,
+				1F37AE89BEAC9C0ABAF06CF7 /* view */,
+				A39B162CDD0C6DE772618183 /* viewmodel */,
+			);
+			path = detail;
+			sourceTree = "<group>";
+		};
+		D971BAEE69DB177E1DF49586 /* api-service */ = {
+			isa = PBXGroup;
+			children = (
+				98A74C207005867BA95AD0F0 /* TNAuthApiService.swift */,
+				F5CEAF04F698BDC650C56D41 /* Request */,
+				D6560952AB797647AF7B1BC1 /* Response */,
+			);
+			path = "api-service";
+			sourceTree = "<group>";
+		};
+		DA8EFB9C977A190B5A95EFEB /* login */ = {
+			isa = PBXGroup;
+			children = (
+				A04047A917F0238E02F67241 /* controller */,
+				52D00DA9C65C173ED585B5D5 /* view */,
+				203B6A84E3B60527D3DC91B9 /* viewmodel */,
+			);
+			path = login;
+			sourceTree = "<group>";
+		};
+		E25BE94ED769258BCBFC2EA9 /* viewmodel */ = {
+			isa = PBXGroup;
+			children = (
+				A3435EBA5C08951AC5F31441 /* TNTodosListViewModel.swift */,
+			);
+			path = viewmodel;
+			sourceTree = "<group>";
+		};
+		EE382391D0A99C729B0DD193 /* list */ = {
+			isa = PBXGroup;
+			children = (
+				C50CF72A3AB3E9F60EFC9F8E /* controller */,
+				5034AF6FCEC1B3478EA760E2 /* view */,
+				E25BE94ED769258BCBFC2EA9 /* viewmodel */,
+			);
+			path = list;
+			sourceTree = "<group>";
+		};
+		EE6C511685FEB809F583991F /* view */ = {
+			isa = PBXGroup;
+			children = (
+				2D36D8C442A331FB28F85160 /* TNPostFormContentView.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		F33E8623E544A98484CA34F4 /* modules */ = {
+			isa = PBXGroup;
+			children = (
+				CD3DED35E44509525C57AC04 /* create-edit */,
+				D88CF6ED03E0A7D3F5383674 /* detail */,
+				59066DC150A794BDA3D7928B /* list */,
+			);
+			path = modules;
+			sourceTree = "<group>";
+		};
+		F5CEAF04F698BDC650C56D41 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				A087CE3A01BF31106010682F /* TNLoginRequestBody.swift */,
+				2BDF5D57C1C4E4EF8F2894B8 /* TNRegisterRequestBody.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		F85E8C111D6179E4B74AA3C8 /* modules */ = {
+			isa = PBXGroup;
+			children = (
+				DA8EFB9C977A190B5A95EFEB /* login */,
+				D3A89A55F93B71F68024A5EC /* register */,
+			);
+			path = modules;
+			sourceTree = "<group>";
+		};
+		FA8ABAB8688E5BCF597936EF /* app-architecture */ = {
+			isa = PBXGroup;
+			children = (
+				B72219CB346AAF4C97F12F69 /* TNStep.swift */,
+				5171D14B560068B1481F3CA9 /* base */,
+			);
+			path = "app-architecture";
+			sourceTree = "<group>";
+		};
+		FE18DA643ABFD6EBB7C5D868 /* viewmodel */ = {
+			isa = PBXGroup;
+			children = (
+				909BF6E81693758445EB6B51 /* TNRegisterViewModel.swift */,
+			);
+			path = viewmodel;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AABB85DA442307C7E5CB046E /* LaraApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0D03EF6907A6C7F3B9EE277B /* Build configuration list for PBXNativeTarget "LaraApp" */;
+			buildPhases = (
+				723BA05E6FF1C2A9C7197AF9 /* Sources */,
+				0F6B96389C193C1D3984DCFA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LaraApp;
+			packageProductDependencies = (
+			);
+			productName = LaraApp;
+			productReference = 1FBFA264BDE6E5ACEC9AC5BB /* LaraApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4CCB499547B48238B44F65EB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					AABB85DA442307C7E5CB046E = {
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = FE1E7DED6BC354FCE850B025 /* Build configuration list for PBXProject "LaraApp" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = CEF01841C3822E16A3A692FC;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 6937BA5B321031A64F25FA56 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AABB85DA442307C7E5CB046E /* LaraApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0F6B96389C193C1D3984DCFA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				371BA2774A217D0A46F8B71E /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		723BA05E6FF1C2A9C7197AF9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				82DFA108D79D55DD58994F01 /* AppDelegate.swift in Sources */,
+				7028F5D33AED37633DF58842 /* AppResult.swift in Sources */,
+				CB90E14AAEB6DC20353F4D6B /* GlobalAPIServiceManager.swift in Sources */,
+				5E70AD9AABCE08FDA3940E82 /* KeychainStorageManager.swift in Sources */,
+				DB184037E212463AAD4948DB /* NetworkError.swift in Sources */,
+				C80FE60F5E370F10315AE45B /* SceneDelegate.swift in Sources */,
+				5C92D81E1DFF9513931C1889 /* TNAPIService.swift in Sources */,
+				A8C5CA76FE663B07D909A797 /* TNAPIServiceProvider.swift in Sources */,
+				1B7F0D0540F23B130D77124E /* TNAppCoordinator.swift in Sources */,
+				ABC0AE550BCF428FDF172742 /* TNAuthApiService.swift in Sources */,
+				1F6547D65293304410DCC9DE /* TNAuthCoordinator.swift in Sources */,
+				46B7D4F9DE06CD1E375B82D5 /* TNAuthResponseBody.swift in Sources */,
+				5CEC1C48C88FA3CC49EE7B57 /* TNCommonButton.swift in Sources */,
+				2D94C332763407430C8D1800 /* TNConstants.swift in Sources */,
+				3726E169C9B93E682F295F64 /* TNController.swift in Sources */,
+				9E9F30F179C1A59151659297 /* TNCoordinator.swift in Sources */,
+				611754A1A45EE4ED60B6380A /* TNCreatePostRequestBody.swift in Sources */,
+				D534BF60A1BFCA553E8AE0DA /* TNCreateTodoRequestBody.swift in Sources */,
+				994E1BF42787E1B0703AC446 /* TNLoginContentView.swift in Sources */,
+				E8790A45D3C361943220DF8E /* TNLoginRequestBody.swift in Sources */,
+				AEF0AE99848BD768C2B8EC0A /* TNLoginViewController.swift in Sources */,
+				522041F73F657E78B24140E4 /* TNLoginViewModel.swift in Sources */,
+				E7627992F30AA4348D00C4DA /* TNMainTabCoordinator.swift in Sources */,
+				2595D35EA38CB0A628157BAE /* TNMainTabViewController.swift in Sources */,
+				93E0E7D3D584F1587C43E28D /* TNNavBar.swift in Sources */,
+				F6EF5945C8772305C18CF087 /* TNPostApiService.swift in Sources */,
+				F68DAB277A2FF5DD27145DCA /* TNPostDetailContentView.swift in Sources */,
+				8380DF5D9EB1A2E6F3B23A77 /* TNPostDetailViewController.swift in Sources */,
+				A4ED269952436FB33B17125A /* TNPostDetailViewModel.swift in Sources */,
+				0A5E3411AE430A8851F26DB9 /* TNPostFormContentView.swift in Sources */,
+				371533F72C143F5D26B210E8 /* TNPostFormViewController.swift in Sources */,
+				B4ECDC2BEF0DEE047DEE0789 /* TNPostFormViewModel.swift in Sources */,
+				9C11D4D2F815E3666C7CB738 /* TNPostResponseBody.swift in Sources */,
+				2349C9539DAC1F2E726F6DDB /* TNPostsCoordinator.swift in Sources */,
+				D8D025D237F7C44387771044 /* TNPostsListContentView.swift in Sources */,
+				C145D795E82964C0889BF321 /* TNPostsListViewController.swift in Sources */,
+				2623EFAC77C161F80BF156A8 /* TNPostsListViewModel.swift in Sources */,
+				9E51308CC4FD716240474914 /* TNProfileContentView.swift in Sources */,
+				219743B94480B30208243100 /* TNProfileCoordinator.swift in Sources */,
+				F5C99A6FAFE9F02C5EBF4495 /* TNProfileViewController.swift in Sources */,
+				CE61B63EB1F47D939733F962 /* TNProfileViewModel.swift in Sources */,
+				67AB61BE012F60D6DFD6F557 /* TNRegisterContentView.swift in Sources */,
+				A57890DE90067264DA7FB01D /* TNRegisterRequestBody.swift in Sources */,
+				81C1E84F7AC0149E74FCBFC6 /* TNRegisterViewController.swift in Sources */,
+				BCFC7137ABED7382A245878F /* TNRegisterViewModel.swift in Sources */,
+				C8B92E06615C57E650B09741 /* TNReorderTodosRequestBody.swift in Sources */,
+				20B348DEBE35C754CEF5A2F0 /* TNRouter.swift in Sources */,
+				79E8F04434D677D38C0DCD4F /* TNStep.swift in Sources */,
+				B098B492D6DEA7B473D93766 /* TNTextField.swift in Sources */,
+				5F12C4266656C5D253A077D3 /* TNTodoApiService.swift in Sources */,
+				8B3BBBAEF0A3C2B80044951D /* TNTodoResponseBody.swift in Sources */,
+				AA239A2FA204F3F6A99CC14F /* TNTodosCoordinator.swift in Sources */,
+				67B0632D0C5022FCB79868AA /* TNTodosListContentView.swift in Sources */,
+				5846E86F4CE81D695E2A780B /* TNTodosListViewController.swift in Sources */,
+				A1F262CB0F3FC9D8BA062C4B /* TNTodosListViewModel.swift in Sources */,
+				C7E820C0DC82D30739B0B42E /* TNUpdatePostRequestBody.swift in Sources */,
+				E637CD68C2212BD54BE3D1FE /* TNUpdateTodoRequestBody.swift in Sources */,
+				F32F44259A12E7C179D369F7 /* TNViewModel.swift in Sources */,
+				2A0D3CE5A1512317BA1698EE /* URLS.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		380319088E4BFEAB1698A825 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGNING_ALLOWED = YES;
+				CODE_SIGNING_REQUIRED = YES;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = LaraApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.technonext.laraapp;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		817AF0C94C82989D886913C3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.9;
+			};
+			name = Debug;
+		};
+		BE9B1BCB64D5B28E8128770D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGNING_ALLOWED = YES;
+				CODE_SIGNING_REQUIRED = YES;
+				CODE_SIGN_IDENTITY = "Apple Distribution";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = LaraApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.technonext.laraapp;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		E22CC6EE6D6C7CF830F7AC09 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.9;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0D03EF6907A6C7F3B9EE277B /* Build configuration list for PBXNativeTarget "LaraApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				380319088E4BFEAB1698A825 /* Debug */,
+				BE9B1BCB64D5B28E8128770D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		FE1E7DED6BC354FCE850B025 /* Build configuration list for PBXProject "LaraApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				817AF0C94C82989D886913C3 /* Debug */,
+				E22CC6EE6D6C7CF830F7AC09 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4CCB499547B48238B44F65EB /* Project object */;
+}

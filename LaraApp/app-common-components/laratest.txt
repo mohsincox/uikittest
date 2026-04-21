@@ -1,0 +1,378 @@
+<?php
+
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\TodoController;
+
+Route::post('/register', [AuthController::class, 'register']);
+Route::post('/login', [AuthController::class, 'login']);
+
+Route::middleware('auth:sanctum')->group(function () {
+    Route::post('/logout', [AuthController::class, 'logout']);
+    Route::get('/me', fn (Request $request) => $request->user());
+});
+
+Route::middleware('auth:sanctum')->group(function () {
+    Route::get('/posts', [PostController::class, 'index']);
+    Route::post('/posts', [PostController::class, 'store']);
+    Route::put('/posts/{post}', [PostController::class, 'update']);
+    Route::delete('/posts/{post}', [PostController::class, 'destroy']);
+    Route::get('/posts/{post}', [PostController::class, 'show']);
+});
+
+
+Route::get('/todos',           [TodoController::class, 'index']);
+Route::post('/todos',          [TodoController::class, 'store']);
+Route::put('/todos/reorder',   [TodoController::class, 'reorder']);
+Route::put('/todos/{id}',      [TodoController::class, 'update']);
+Route::delete('/todos/{id}',   [TodoController::class, 'destroy']);
+
+
+
+
+
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Post extends Model
+{
+    protected $fillable = ['title', 'body', 'user_id'];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+}
+
+
+
+
+
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
+
+class Todo extends Model
+{
+    protected $keyType = 'string';
+    public $incrementing = false;
+
+    protected $fillable = [
+        'id',
+        'title',
+        'is_completed',
+        'sort_order',
+    ];
+
+    protected $casts = [
+        'is_completed' => 'boolean',
+    ];
+
+    protected static function boot(): void
+    {
+        parent::boot();
+
+        static::creating(function ($model) {
+            if (empty($model->id)) {
+                $model->id = (string) Str::uuid();
+            }
+        });
+    }
+}
+
+
+
+
+
+<?php
+
+namespace App\Models;
+
+// use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
+use Laravel\Sanctum\HasApiTokens;
+
+class User extends Authenticatable
+{
+    /** @use HasFactory<\Database\Factories\UserFactory> */
+    use HasFactory, Notifiable, HasApiTokens;
+
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var list<string>
+     */
+    protected $fillable = [
+        'name',
+        'email',
+        'password',
+    ];
+
+    /**
+     * The attributes that should be hidden for serialization.
+     *
+     * @var list<string>
+     */
+    protected $hidden = [
+        'password',
+        'remember_token',
+    ];
+
+    /**
+     * Get the attributes that should be cast.
+     *
+     * @return array<string, string>
+     */
+    protected function casts(): array
+    {
+        return [
+            'email_verified_at' => 'datetime',
+            'password' => 'hashed',
+        ];
+    }
+
+    public function posts()
+    {
+        return $this->hasMany(Post::class); // Make sure to import the Post model
+    }
+}
+
+
+
+
+
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     */
+    public function up(): void
+    {
+        Schema::create('todos', function (Blueprint $table) {
+            // $table->id();
+            $table->uuid('id')->primary();
+            $table->string('title');
+            $table->boolean('is_completed')->default(false);
+            $table->integer('sort_order')->default(0);
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
+        Schema::dropIfExists('todos');
+    }
+};
+
+
+
+
+
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Models\User;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Hash;
+
+class AuthController extends Controller
+{
+    // Register
+    public function register(Request $request) {
+        $user = User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+        ]);
+
+        $token = $user->createToken('auth_token')->plainTextToken;
+
+        return response()->json(['user' => $user, 'token' => $token]);
+    }
+
+    // Login
+    public function login(Request $request) {
+        $validatedData = $request->validate([
+            'email' => 'required|email',
+            'password' => 'required',
+        ]);
+
+        if (!Auth::attempt($request->only('email', 'password'))) {
+            return response()->json(['message' => 'Invalid login details'], 401);
+        }
+
+        $user = User::where('email', $request->email)->firstOrFail();
+        $token = $user->createToken('auth_token')->plainTextToken;
+
+        return response()->json(['user' => $user, 'token' => $token]);
+    }
+
+    // Logout
+    public function logout(Request $request) {
+        $request->user()->tokens()->delete();
+        return response()->json(['message' => 'Logged out']);
+    }
+}
+
+
+
+
+
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Http\Controllers\Controller;
+use App\Models\Post;
+use Illuminate\Http\Request;
+
+class PostController extends Controller
+{
+    public function index()
+    {
+        return Post::where('user_id', auth()->id())->latest()->get();
+    }
+
+    public function store(Request $request)
+    {
+        $validated = $request->validate([
+            'title' => 'required|string|max:255',
+            'body' => 'required|string',
+        ]);
+
+        $post = auth()->user()->posts()->create($validated);
+
+        return response()->json($post, 201);
+    }
+
+    public function update(Request $request, Post $post)
+    {
+        abort_if($post->user_id !== auth()->id(), 403);
+
+        $validated = $request->validate([
+            'title' => 'required|string|max:255',
+            'body' => 'required|string',
+        ]);
+
+        $post->update($validated);
+
+        return response()->json($post);
+    }
+
+    public function destroy(Post $post)
+    {
+        abort_if($post->user_id !== auth()->id(), 403);
+
+        $post->delete();
+
+        return response()->json(['message' => 'Post deleted']);
+    }
+
+    public function show(Post $post)
+    {
+        // Ensure only owner can view
+        if ($post->user_id !== auth()->id()) {
+            return response()->json(['message' => 'Unauthorized'], 403);
+        }
+
+        return response()->json($post);
+    }
+}
+
+
+
+
+
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Models\Todo;
+use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Request;
+
+class TodoController extends Controller
+{
+    // GET /api/todos
+    public function index(): JsonResponse
+    {
+        $todos = Todo::orderBy('sort_order')->get();
+        return response()->json($todos);
+    }
+
+    // POST /api/todos
+    public function store(Request $request): JsonResponse
+    {
+        $validated = $request->validate([
+            'title'        => 'required|string|min:3|max:255',
+            'is_completed' => 'sometimes|boolean',
+        ]);
+
+        $todo = Todo::create([
+            'title'        => $validated['title'],
+            'is_completed' => $validated['is_completed'] ?? false,
+            'sort_order'   => Todo::max('sort_order') + 1,
+        ]);
+
+        return response()->json($todo, 201);
+    }
+
+    // PUT /api/todos/{id}
+    public function update(Request $request, string $id): JsonResponse
+    {
+        $todo = Todo::findOrFail($id);
+
+        $validated = $request->validate([
+            'title'        => 'sometimes|string|min:3|max:255',
+            'is_completed' => 'sometimes|boolean',
+        ]);
+
+        $todo->update($validated);
+
+        return response()->json($todo);
+    }
+
+    // DELETE /api/todos/{id}
+    public function destroy(string $id): JsonResponse
+    {
+        Todo::findOrFail($id)->delete();
+        return response()->json(['message' => 'Deleted'], 200);
+    }
+
+    // PUT /api/todos/reorder
+    public function reorder(Request $request): JsonResponse
+    {
+        $validated = $request->validate([
+            'ordered_ids'   => 'required|array',
+            'ordered_ids.*' => 'required|string|exists:todos,id',
+        ]);
+
+        foreach ($validated['ordered_ids'] as $index => $id) {
+            Todo::where('id', $id)->update(['sort_order' => $index]);
+        }
+
+        return response()->json(['message' => 'Reordered']);
+    }
+}
