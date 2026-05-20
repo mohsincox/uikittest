@@ -7,6 +7,9 @@ final class TNMainTabCoordinator: TNCoordinator {
     private var postsCoordinator: TNPostsCoordinator?
     private var todosCoordinator: TNTodosCoordinator?
     private var profileCoordinator: TNProfileCoordinator?
+    private var contentCoordinator: TNContentCoordinator?
+    private var booksCoordinator: TNBooksCoordinator?
+    private var categoriesCoordinator: TNCategoriesCoordinator?
 
     override func start() {
         setupTabs()
@@ -52,7 +55,31 @@ final class TNMainTabCoordinator: TNCoordinator {
         addChild(profileCoordinator)
         profileNav.tabBarItem = UITabBarItem(title: "Profile", image: UIImage(systemName: "person.circle"), tag: 2)
 
-        tabBarController.setViewControllers([postsNav, todosNav, profileNav], animated: false)
+        let contentNav = makeNav()
+        let contentCoordinator = TNContentCoordinator(router: TNRouter(navigationController: contentNav))
+        contentCoordinator.coordinatorStepper.subscribe(coordinatorStepper).store(in: &cancellables)
+        contentCoordinator.start()
+        self.contentCoordinator = contentCoordinator
+        addChild(contentCoordinator)
+        contentNav.tabBarItem = UITabBarItem(title: "Contents", image: UIImage(systemName: "rectangle.stack"), tag: 3)
+        
+        let booksNav = makeNav()
+        let booksCoordinator = TNBooksCoordinator(router: TNRouter(navigationController: booksNav))
+        booksCoordinator.coordinatorStepper.subscribe(coordinatorStepper).store(in: &cancellables)
+        booksCoordinator.start()
+        self.booksCoordinator = booksCoordinator
+        addChild(booksCoordinator)
+        booksNav.tabBarItem = UITabBarItem(title: "Books", image: UIImage(systemName: "books.vertical"), tag: 4)
+        
+        let categoriesNav = makeNav()
+        let categoriesCoordinator = TNCategoriesCoordinator(router: TNRouter(navigationController: categoriesNav))
+        categoriesCoordinator.coordinatorStepper.subscribe(coordinatorStepper).store(in: &cancellables)
+        categoriesCoordinator.start()
+        self.categoriesCoordinator = categoriesCoordinator
+        addChild(categoriesCoordinator)
+        categoriesNav.tabBarItem = UITabBarItem(title: "Categories", image: UIImage(systemName: "list.bullet"), tag: 5)
+
+        tabBarController.setViewControllers([postsNav, todosNav, profileNav, contentNav, booksNav, categoriesNav], animated: false)
     }
 
     private func makeNav() -> UINavigationController {

@@ -30,7 +30,7 @@
 		611754A1A45EE4ED60B6380A /* TNCreatePostRequestBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE11D67ADE5F5512743AF19D /* TNCreatePostRequestBody.swift */; };
 		67AB61BE012F60D6DFD6F557 /* TNRegisterContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81052432CEED9ADCEF8753A0 /* TNRegisterContentView.swift */; };
 		67B0632D0C5022FCB79868AA /* TNTodosListContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6353D2ECEE876BFE8AF7192 /* TNTodosListContentView.swift */; };
-		7028F5D33AED37633DF58842 /* AppResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A698C9CDBB5F03A59A77F6 /* AppResult.swift */; };
+		7028F5D33AED37633DF58842 /* TNAppResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A698C9CDBB5F03A59A77F6 /* TNAppResult.swift */; };
 		79E8F04434D677D38C0DCD4F /* TNStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72219CB346AAF4C97F12F69 /* TNStep.swift */; };
 		81C1E84F7AC0149E74FCBFC6 /* TNRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB248FD557DE8EA2229C253B /* TNRegisterViewController.swift */; };
 		82DFA108D79D55DD58994F01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFD34551D8B1C9A71482D5A /* AppDelegate.swift */; };
@@ -123,7 +123,7 @@
 		CE11D67ADE5F5512743AF19D /* TNCreatePostRequestBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TNCreatePostRequestBody.swift; sourceTree = "<group>"; };
 		CE4E31A0846DC8E6C23639F7 /* TNCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TNCoordinator.swift; sourceTree = "<group>"; };
 		CE6F9F41AFEA5C77FFB937C1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D0A698C9CDBB5F03A59A77F6 /* AppResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppResult.swift; sourceTree = "<group>"; };
+		D0A698C9CDBB5F03A59A77F6 /* TNAppResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TNAppResult.swift; sourceTree = "<group>"; };
 		D1B87792CD0A1C9EF5C02A4F /* TNPostsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TNPostsListViewModel.swift; sourceTree = "<group>"; };
 		D309B7E0D5C168960F6E2FF0 /* TNProfileContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TNProfileContentView.swift; sourceTree = "<group>"; };
 		D6353D2ECEE876BFE8AF7192 /* TNTodosListContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TNTodosListContentView.swift; sourceTree = "<group>"; };
@@ -132,6 +132,24 @@
 		F23838C10A8690C916721A1E /* TNLoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TNLoginViewModel.swift; sourceTree = "<group>"; };
 		FEB852458C11B4FE974E0783 /* TNUpdatePostRequestBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TNUpdatePostRequestBody.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		C24599E82FB21A4800F4A48B /* categories */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = categories;
+			sourceTree = "<group>";
+		};
+		C2A1EE972F98F56E0015FF64 /* content */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = content;
+			sourceTree = "<group>";
+		};
+		C2FBD7C82FA767F2008FABBA /* books */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = books;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXGroup section */
 		0BACFD9683765E5ACEBDFFA9 /* posts */ = {
@@ -257,6 +275,9 @@
 		4D9D67F4658C7AEB6AF9DD07 /* app-modules */ = {
 			isa = PBXGroup;
 			children = (
+				C24599E82FB21A4800F4A48B /* categories */,
+				C2FBD7C82FA767F2008FABBA /* books */,
+				C2A1EE972F98F56E0015FF64 /* content */,
 				63845EA9B75201F2639EC96B /* authentication */,
 				CCD05B279A074095929746D0 /* main-tab */,
 				0BACFD9683765E5ACEBDFFA9 /* posts */,
@@ -486,7 +507,7 @@
 		BCE0BF9CC34FF9986F3D02C8 /* error */ = {
 			isa = PBXGroup;
 			children = (
-				D0A698C9CDBB5F03A59A77F6 /* AppResult.swift */,
+				D0A698C9CDBB5F03A59A77F6 /* TNAppResult.swift */,
 				9B92555ACCC9259008CDA92E /* NetworkError.swift */,
 			);
 			path = error;
@@ -735,6 +756,11 @@
 			);
 			dependencies = (
 			);
+			fileSystemSynchronizedGroups = (
+				C24599E82FB21A4800F4A48B /* categories */,
+				C2A1EE972F98F56E0015FF64 /* content */,
+				C2FBD7C82FA767F2008FABBA /* books */,
+			);
 			name = LaraApp;
 			packageProductDependencies = (
 			);
@@ -792,7 +818,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				82DFA108D79D55DD58994F01 /* AppDelegate.swift in Sources */,
-				7028F5D33AED37633DF58842 /* AppResult.swift in Sources */,
+				7028F5D33AED37633DF58842 /* TNAppResult.swift in Sources */,
 				CB90E14AAEB6DC20353F4D6B /* GlobalAPIServiceManager.swift in Sources */,
 				5E70AD9AABCE08FDA3940E82 /* KeychainStorageManager.swift in Sources */,
 				DB184037E212463AAD4948DB /* NetworkError.swift in Sources */,
