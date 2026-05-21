@@ -3,6 +3,7 @@ import Combine
 
 final class TNMainTabCoordinator: TNCoordinator {
     private let tabBarController = TNMainTabViewController()
+    private var drawerViewController: TNDrawerViewController?
 
     private var postsCoordinator: TNPostsCoordinator?
     private var todosCoordinator: TNTodosCoordinator?
@@ -13,7 +14,13 @@ final class TNMainTabCoordinator: TNCoordinator {
 
     override func start() {
         setupTabs()
-        router.setRoot(tabBarController, hideBar: true)
+        let drawerContent = TNDrawerContentView()
+        drawerContent.onMenuItemTapped = { [weak self] item in
+            self?.handleDrawerTap(item)
+        }
+        let drawerVC = TNDrawerViewController(mainContent: tabBarController, drawerContent: drawerContent)
+        self.drawerViewController = drawerVC
+        router.setRoot(drawerVC, hideBar: true)
     }
 
     override func bindStepper() {
@@ -21,16 +28,16 @@ final class TNMainTabCoordinator: TNCoordinator {
             .receive(on: DispatchQueue.main)
             .sink { [weak self] step in
                 switch step {
-                case .loginRequired:
-                    self?.coordinatorStepper.send(.loginRequired)
-                default:
-                    break
+                case .toggleDrawerRequired: self?.drawerViewController?.toggleDrawer()
+                case .loginRequired:        self?.coordinatorStepper.send(.loginRequired)
+                default: break
                 }
             }
             .store(in: &cancellables)
     }
 
     private func setupTabs() {
+        // Posts
         let postsNav = makeNav()
         let postsCoordinator = TNPostsCoordinator(router: TNRouter(navigationController: postsNav))
         postsCoordinator.coordinatorStepper.subscribe(coordinatorStepper).store(in: &cancellables)
@@ -39,6 +46,7 @@ final class TNMainTabCoordinator: TNCoordinator {
         addChild(postsCoordinator)
         postsNav.tabBarItem = UITabBarItem(title: "Posts", image: UIImage(systemName: "doc.text"), tag: 0)
 
+        // Todos
         let todosNav = makeNav()
         let todosCoordinator = TNTodosCoordinator(router: TNRouter(navigationController: todosNav))
         todosCoordinator.coordinatorStepper.subscribe(coordinatorStepper).store(in: &cancellables)
@@ -47,6 +55,7 @@ final class TNMainTabCoordinator: TNCoordinator {
         addChild(todosCoordinator)
         todosNav.tabBarItem = UITabBarItem(title: "Todos", image: UIImage(systemName: "checklist"), tag: 1)
 
+        // Profile
         let profileNav = makeNav()
         let profileCoordinator = TNProfileCoordinator(router: TNRouter(navigationController: profileNav))
         profileCoordinator.coordinatorStepper.subscribe(coordinatorStepper).store(in: &cancellables)
@@ -55,31 +64,88 @@ final class TNMainTabCoordinator: TNCoordinator {
         addChild(profileCoordinator)
         profileNav.tabBarItem = UITabBarItem(title: "Profile", image: UIImage(systemName: "person.circle"), tag: 2)
 
-        let contentNav = makeNav()
-        let contentCoordinator = TNContentCoordinator(router: TNRouter(navigationController: contentNav))
-        contentCoordinator.coordinatorStepper.subscribe(coordinatorStepper).store(in: &cancellables)
-        contentCoordinator.start()
-        self.contentCoordinator = contentCoordinator
-        addChild(contentCoordinator)
-        contentNav.tabBarItem = UITabBarItem(title: "Contents", image: UIImage(systemName: "rectangle.stack"), tag: 3)
-        
-        let booksNav = makeNav()
-        let booksCoordinator = TNBooksCoordinator(router: TNRouter(navigationController: booksNav))
-        booksCoordinator.coordinatorStepper.subscribe(coordinatorStepper).store(in: &cancellables)
-        booksCoordinator.start()
-        self.booksCoordinator = booksCoordinator
-        addChild(booksCoordinator)
-        booksNav.tabBarItem = UITabBarItem(title: "Books", image: UIImage(systemName: "books.vertical"), tag: 4)
-        
-        let categoriesNav = makeNav()
-        let categoriesCoordinator = TNCategoriesCoordinator(router: TNRouter(navigationController: categoriesNav))
-        categoriesCoordinator.coordinatorStepper.subscribe(coordinatorStepper).store(in: &cancellables)
-        categoriesCoordinator.start()
-        self.categoriesCoordinator = categoriesCoordinator
-        addChild(categoriesCoordinator)
-        categoriesNav.tabBarItem = UITabBarItem(title: "Categories", image: UIImage(systemName: "list.bullet"), tag: 5)
+        tabBarController.setViewControllers([postsNav, todosNav, profileNav], animated: false)
+    }
 
-        tabBarController.setViewControllers([postsNav, todosNav, profileNav, contentNav, booksNav, categoriesNav], animated: false)
+//    private func handleDrawerTap(_ item: TNDrawerMenuItem) {
+//        drawerViewController?.closeDrawer()
+//        switch item {
+//        case .posts:      tabBarController.selectedIndex = 0
+//        case .todos:      tabBarController.selectedIndex = 1
+//        case .profile:    tabBarController.selectedIndex = 2
+//        case .contents:   showSidebar(.content)
+//        case .books:      showSidebar(.books)
+//        case .categories: showSidebar(.categories)
+//        }
+//    }
+    
+    private func handleDrawerTap(_ item: TNDrawerMenuItem) {
+        drawerViewController?.closeDrawer()
+        switch item {
+        case .posts:
+            restoreTabBar()
+            tabBarController.selectedIndex = 0
+        case .todos:
+            restoreTabBar()
+            tabBarController.selectedIndex = 1
+        case .profile:
+            restoreTabBar()
+            tabBarController.selectedIndex = 2
+        case .contents:   showSidebar(.content)
+        case .books:      showSidebar(.books)
+        case .categories: showSidebar(.categories)
+        }
+    }
+
+
+    private enum SidebarDestination { case content, books, categories }
+
+    private func showSidebar(_ destination: SidebarDestination) {
+        let sidebarNav = makeNav()
+        let coordinator: TNCoordinator
+        switch destination {
+        case .content:
+            let c = TNContentCoordinator(router: TNRouter(navigationController: sidebarNav))
+            contentCoordinator = c
+            coordinator = c
+        case .books:
+            let c = TNBooksCoordinator(router: TNRouter(navigationController: sidebarNav))
+            booksCoordinator = c
+            coordinator = c
+        case .categories:
+            let c = TNCategoriesCoordinator(router: TNRouter(navigationController: sidebarNav))
+            categoriesCoordinator = c
+            coordinator = c
+        }
+
+        // When root of sidebar sends popRequired → restore tab bar
+        coordinator.coordinatorStepper
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] step in
+                switch step {
+                case .popRequired:
+                    // Only restore tab bar when popping from the root list screen
+                    if coordinator.router.navigationController.viewControllers.count <= 1 {
+                        self?.restoreTabBar()
+                    }
+                case .toggleDrawerRequired:
+                    self?.drawerViewController?.toggleDrawer()
+                default: break
+                }
+            }
+            .store(in: &cancellables)
+
+        addChild(coordinator)
+        coordinator.start()
+        drawerViewController?.swapMainContent(sidebarNav)
+    }
+
+//    private func restoreTabBar() {
+//        drawerViewController?.swapMainContent(tabBarController)
+//    }
+    private func restoreTabBar() {
+        guard drawerViewController?.mainContentController !== tabBarController else { return }
+        drawerViewController?.swapMainContent(tabBarController)
     }
 
     private func makeNav() -> UINavigationController {

@@ -1,0 +1,84 @@
+# Xcode
+DerivedData/
+*.xcworkspace/
+*.xcuserstate
+*.xcuserdata/
+.idea/
+*.lock
+
+# Swift Packages
+Packages/
+.swiftpm/
+
+# Build artifacts
+build/
+*.o
+*.dSYM/
+*.dSYM.zip
+*.dSYM.tgz
+*.dSYM.tar.gz
+*.lo
+*.la
+*.a
+*.so
+*.swp
+*.swo
+*.swn
+*.pc
+.claude
+
+# CocoaPods
+Pods/
+Podfile.lock
+
+# Carthage
+Carthage/
+Carthage/Checkouts
+Carthage/Build
+
+# SPM
+.build/
+
+# Xcode Generated
+*.xcodeproj/project.xcworkspace/
+*.xcodeproj/xcuserdata/
+
+# Swift Package Manager User-Specific
+.swiftpm/xcode/
+.sourcepackage/
+
+# Swift Playgrounds
+timeline.xctimeline
+playground.xcworkspace
+
+# Fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+fastlane/test_output
+fastlane/readme.md
+
+# Archives
+*.xcarchive
+
+
+# Environment
+.env
+.envrc
+*.env
+
+# Logs
+*.log
+*.DS_Store
+DEV.xcconfig
+PROD.xcconfig
+STAGE.xcconfig
+Baseline.json
+remote_config_defaults.plist
+bind-client-config-dev.json
+bind-client-config-stage.json
+bind-client-config-prod.json
+
+#Help
+HelpingRepos
+scripts

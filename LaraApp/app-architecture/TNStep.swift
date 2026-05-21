@@ -28,4 +28,7 @@ enum TNStep {
     case categoryDetailRequired(category: TNCategoryResponseBody)
     case createCategoryRequired
     case editCategoryRequired(category: TNCategoryResponseBody)
+    
+    // drawer
+    case toggleDrawerRequired
 }

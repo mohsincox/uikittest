@@ -9,7 +9,8 @@ struct TNTodosListContentView: View {
             TNNavBar(
                 title: "Todos",
                 trailingButtonTitle: editMode == .active ? "Done" : "Edit",
-                trailingButtonAction: { editMode = editMode == .active ? .inactive : .active }
+                trailingButtonAction: { editMode = editMode == .active ? .inactive : .active },
+                menuButtonAction: viewModel.onMenuTapped
             )
             addTodoSection
             content

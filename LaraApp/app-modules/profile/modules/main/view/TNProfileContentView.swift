@@ -6,7 +6,8 @@ struct TNProfileContentView: View {
 
     var body: some View {
         VStack(spacing: .zero) {
-            TNNavBar(title: "Profile")
+            TNNavBar(title: "Profile",
+                     menuButtonAction: viewModel.onMenuTapped)
             content
         }
         .background(Color(.systemBackground))

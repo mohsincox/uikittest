@@ -14,7 +14,8 @@ struct TNCategoriesListContentView: View {
         VStack {
             TNNavBar(title: "Categories",
                                  trailingButtonTitle: "Add",
-                     trailingButtonAction: viewModel.onCreateCategoryTapped)
+                     trailingButtonAction: viewModel.onCreateCategoryTapped,
+                     menuButtonAction: viewModel.onMenuTapped)
             
             List {
                             ForEach(viewModel.categories) { b in

@@ -14,7 +14,8 @@ struct TNBooksListContentView: View {
         VStack(spacing: .zero) {
             TNNavBar(title: "My Books",
                      trailingButtonTitle: "Add",
-                     trailingButtonAction: viewModel.onCreateBookTapped)
+                     trailingButtonAction: viewModel.onCreateBookTapped,
+                     menuButtonAction: viewModel.onMenuTapped)
             List {
                 ForEach(viewModel.books) { b in
                     Button {

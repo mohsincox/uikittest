@@ -5,6 +5,8 @@ struct TNNavBar: View {
     var leadingButtonAction: (() -> Void)?
     var trailingButtonTitle: String = ""
     var trailingButtonAction: (() -> Void)?
+    
+    var menuButtonAction: (() -> Void)?
 
     var body: some View {
         HStack(spacing: 0) {
@@ -22,15 +24,24 @@ struct TNNavBar: View {
 
     @ViewBuilder
     private var leadingButton: some View {
-        if let action = leadingButtonAction {
-            Button(action: action) {
-                Image(systemName: "chevron.left")
-                    .font(.system(size: 18, weight: .medium))
-                    .foregroundColor(.primary)
-                    .frame(width: 44, height: 44)
+        Group {
+            if let action = menuButtonAction {
+                Button(action: action) {
+                    Image(systemName: "line.3.horizontal")
+                        .font(.system(size: 20, weight: .medium))
+                        .foregroundColor(.primary)
+                        .frame(width: 44, height: 44)
+                }
+            } else if let action = leadingButtonAction {
+                Button(action: action) {
+                    Image(systemName: "chevron.left")
+                        .font(.system(size: 18, weight: .medium))
+                        .foregroundColor(.primary)
+                        .frame(width: 44, height: 44)
+                }
+            } else {
+                Color.clear.frame(width: 44, height: 44)
             }
-        } else {
-            Color.clear.frame(width: 44, height: 44)
         }
     }
 

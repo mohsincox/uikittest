@@ -29,4 +29,8 @@ class TNViewModel: NSObject, ObservableObject {
     func onBackTapped() {
         stepper.send(.popRequired)
     }
+    
+    func onMenuTapped() {
+        stepper.send(.toggleDrawerRequired)
+    }
 }

@@ -7,7 +7,8 @@ struct TNPostsListContentView: View {
         VStack(spacing: .zero) {
             TNNavBar(title: "My Posts",
                      trailingButtonTitle: "Add",
-                     trailingButtonAction: viewModel.onCreatePostTapped)
+                     trailingButtonAction: viewModel.onCreatePostTapped,
+                     menuButtonAction: viewModel.onMenuTapped)
             content
         }
         .background(Color(.systemBackground))

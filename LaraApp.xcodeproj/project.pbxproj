@@ -139,6 +139,11 @@
 			path = categories;
 			sourceTree = "<group>";
 		};
+		C261628A2FBDF0540020399A /* drawer */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = drawer;
+			sourceTree = "<group>";
+		};
 		C2A1EE972F98F56E0015FF64 /* content */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = content;
@@ -468,6 +473,7 @@
 		A242035F445D83045D1A334B /* app-common-components */ = {
 			isa = PBXGroup;
 			children = (
+				C261628A2FBDF0540020399A /* drawer */,
 				7476C9D4AE7DC0E5078FA2CE /* TNCommonButton.swift */,
 				4BF401A8BF94B8A9805AFAE5 /* TNNavBar.swift */,
 				DC76B261CBA67E95A6460D92 /* TNTextField.swift */,
@@ -758,6 +764,7 @@
 			);
 			fileSystemSynchronizedGroups = (
 				C24599E82FB21A4800F4A48B /* categories */,
+				C261628A2FBDF0540020399A /* drawer */,
 				C2A1EE972F98F56E0015FF64 /* content */,
 				C2FBD7C82FA767F2008FABBA /* books */,
 			);

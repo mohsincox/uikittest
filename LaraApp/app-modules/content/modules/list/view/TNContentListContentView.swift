@@ -16,7 +16,8 @@ struct TNContentListContentView: View {
             TNNavBar(title: "My Contents",
                      trailingButtonTitle: "Add"
                      ,
-                     trailingButtonAction: viewModel.onCreateContentTapped
+                     trailingButtonAction: viewModel.onCreateContentTapped,
+                     menuButtonAction: viewModel.onMenuTapped
             )
             content
         }
