@@ -45,4 +45,9 @@ struct URLS {
         static func update(id: Int) -> URL? { URL(string: "\(URLS.baseURL)/categories/\(id)") }
         static func delete(id: Int) -> URL? { URL(string: "\(URLS.baseURL)/categories/\(id)") }
     }
+
+    enum Products {
+        static var list: URL? { URL(string: "\(URLS.baseURL)/products") }
+        static func byCategory(categoryId: Int) -> URL? { URL(string: "\(URLS.baseURL)/products?category_id=\(categoryId)") }
+    }
 }

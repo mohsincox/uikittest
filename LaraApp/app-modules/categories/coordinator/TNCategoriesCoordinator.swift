@@ -21,6 +21,7 @@ final class TNCategoriesCoordinator: TNCoordinator {
                     case .categoryDetailRequired(let category): self?.showCategoryDetail(category: category)
                     case .createCategoryRequired: self?.showCategoryForm()
                     case .editCategoryRequired(let category): self?.editCategory(category: category)
+                    case .categoryTabRequired: self?.showCategoryTab()
 //                    case .editBookRequired(let book): self?.editBookForm(book: book)
                     case .popRequired: self?.router.pop()
                     default: break
@@ -34,7 +35,13 @@ final class TNCategoriesCoordinator: TNCoordinator {
         vm.bindStepper(to: coordinatorStepper)
         router.setRoot(TNCategoriesListViewController(viewModel: vm), hideBar: true)
     }
-    
+
+    private func showCategoryTab() {
+        let vm = TNCategoryTabViewModel()
+        vm.bindStepper(to: coordinatorStepper)
+        router.push(TNCategoryTabViewController(viewModel: vm))
+    }
+
     private func showCategoryDetail(category: TNCategoryResponseBody) {
         print("category ddddddd")
             let vm = TNCategoryDetailViewModel(category: category)

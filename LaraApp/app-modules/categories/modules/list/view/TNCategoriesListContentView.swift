@@ -17,6 +17,12 @@ struct TNCategoriesListContentView: View {
                      trailingButtonAction: viewModel.onCreateCategoryTapped,
                      menuButtonAction: viewModel.onMenuTapped)
             
+            Button {
+                viewModel.onCategoryTabTapped()
+            } label: {
+                Text("Category Tab Screen")
+            }
+            
             List {
                             ForEach(viewModel.categories) { b in
                                 Button {

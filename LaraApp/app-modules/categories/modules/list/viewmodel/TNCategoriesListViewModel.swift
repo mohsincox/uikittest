@@ -50,7 +50,11 @@ final class TNCategoriesListViewModel: TNViewModel {
     func onCreateCategoryTapped() {
         stepper.send(.createCategoryRequired)
     }
-    
+
+    func onCategoryTabTapped() {
+        stepper.send(.categoryTabRequired)
+    }
+
     func deleteCategory(id: Int) async {
         let result = await apiService.deleteCategory(id: id)
         await MainActor.run {
