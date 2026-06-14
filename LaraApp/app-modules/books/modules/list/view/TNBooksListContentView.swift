@@ -16,6 +16,13 @@ struct TNBooksListContentView: View {
                      trailingButtonTitle: "Add",
                      trailingButtonAction: viewModel.onCreateBookTapped,
                      menuButtonAction: viewModel.onMenuTapped)
+            
+            Button {
+                viewModel.onBookTabTapped()
+            } label: {
+                Text("Book Tab Screen")
+            }
+            
             List {
                 ForEach(viewModel.books) { b in
                     Button {

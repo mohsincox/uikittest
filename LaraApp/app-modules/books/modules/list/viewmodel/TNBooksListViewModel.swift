@@ -56,4 +56,8 @@ final class TNBooksListViewModel: TNViewModel {
     func onCreateBookTapped() {
         stepper.send(.createBookRequired)
     }
+    
+    func onBookTabTapped() {
+        stepper.send(.bookTabRequired)
+    }
 }

@@ -21,6 +21,7 @@ final class TNBooksCoordinator: TNCoordinator {
                 case .bookDetailRequired(let book): self?.showBookDetail(book: book)
                 case .createBookRequired: self?.showBookForm()
                 case .editBookRequired(let book): self?.editBookForm(book: book)
+                case .bookTabRequired: self?.showBookTab()
                 case .popRequired: self?.router.pop()
                 default: break
                 }
@@ -50,5 +51,11 @@ final class TNBooksCoordinator: TNCoordinator {
         let vm = TNBookEditViewModel(id: book.id ?? 0, title: book.title ?? "", author: book.author ?? "", apiService: TNBookApiService())
         vm.bindStepper(to: coordinatorStepper)
         router.push(TNBookEditViewController(viewModel: vm))
+    }
+    
+    private func showBookTab() {
+        let vm = TNBookTabViewModel()
+        vm.bindStepper(to: coordinatorStepper)
+        router.push(TNBookTabViewController(viewModel: vm))
     }
 }
