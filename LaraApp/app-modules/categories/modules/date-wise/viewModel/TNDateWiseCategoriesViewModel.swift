@@ -14,6 +14,11 @@ final class TNDateWiseCategoriesViewModel: TNViewModel {
     @Published var categories: [TNCategoryResponseBody] = []
     @Published var isLoading: Bool = false
     @Published var errorMessage: String = ""
+    @Published var isDateRangeSheetPresented: Bool = false
+    @Published var sheetDraftRangeStart: Date = Date()
+    @Published var sheetDraftRangeEnd: Date = Date()
+    @Published private(set) var sheetSelectionDayCount: Int = 7
+    @Published private(set) var sheetDatePickerToken = UUID()
 
     private let apiService: TNCategoryApiService
 
@@ -35,6 +40,24 @@ final class TNDateWiseCategoriesViewModel: TNViewModel {
         let f = DateFormatter()
         f.dateFormat = "MMM d"
         return "\(f.string(from: startDate)) - \(f.string(from: endDate))"
+    }
+
+    func onDateRangeTapped() {
+        sheetDraftRangeStart = startDate
+        sheetDraftRangeEnd = endDate
+        sheetDatePickerToken = UUID()
+        isDateRangeSheetPresented = true
+    }
+
+    func dismissDateRangeSheetWithoutApplying() {
+        isDateRangeSheetPresented = false
+    }
+
+    func applySheetDateRange() {
+        isDateRangeSheetPresented = false
+        startDate = sheetDraftRangeStart
+        endDate = sheetDraftRangeEnd
+        loadCategories()
     }
 
     func onPreviousWeekTapped() {
