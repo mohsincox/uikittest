@@ -30,6 +30,7 @@ enum TNStep {
     case createCategoryRequired
     case editCategoryRequired(category: TNCategoryResponseBody)
     case categoryTabRequired
+    case dateWiseCategoriesRequired
     
     // drawer
     case toggleDrawerRequired

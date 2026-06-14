@@ -22,6 +22,7 @@ final class TNCategoriesCoordinator: TNCoordinator {
                     case .createCategoryRequired: self?.showCategoryForm()
                     case .editCategoryRequired(let category): self?.editCategory(category: category)
                     case .categoryTabRequired: self?.showCategoryTab()
+                    case .dateWiseCategoriesRequired: self?.showDateWiseCategories()
 //                    case .editBookRequired(let book): self?.editBookForm(book: book)
                     case .popRequired: self?.router.pop()
                     default: break
@@ -34,6 +35,12 @@ final class TNCategoriesCoordinator: TNCoordinator {
         let vm = TNCategoriesListViewModel()
         vm.bindStepper(to: coordinatorStepper)
         router.setRoot(TNCategoriesListViewController(viewModel: vm), hideBar: true)
+    }
+
+    private func showDateWiseCategories() {
+        let vm = TNDateWiseCategoriesViewModel(apiService: TNCategoryApiService())
+        vm.bindStepper(to: coordinatorStepper)
+        router.push(TNDateWiseCategoriesViewController(viewModel: vm))
     }
 
     private func showCategoryTab() {

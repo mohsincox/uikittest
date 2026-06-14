@@ -57,6 +57,23 @@ final class TNCategoryApiService {
             }
         }
     
+    func getDateWiseCategories(startDate: String, endDate: String) async -> AppResult<[TNCategoryResponseBody]> {
+        guard let url = URLS.Categories.dateWiseList(startDate: startDate, endDate: endDate) else {
+            return .failure(NetworkError.invalidURL)
+        }
+        do {
+            let reply = try await GlobalAPIServiceManager.shared.request(url: url, method: .get)
+            guard let data = reply.data, reply.isSuccess else {
+                return .failure(NetworkError.serverError(code: reply.statusCode, message: nil))
+            }
+            return .success(try JSONDecoder().decode([TNCategoryResponseBody].self, from: data))
+        } catch let e as DecodingError {
+            return .failure(NetworkError.decodingFailed(underlying: e))
+        } catch {
+            return .failure(NetworkError.serverError(code: -1, message: error.localizedDescription))
+        }
+    }
+
     func updateCategory(id: Int, requestBody: TNUpdateCategoryRequestBody) async -> AppResult<TNCategoryResponseBody> {
             print(id)
             guard let url = URLS.Categories.update(id: id) else { return .failure(NetworkError.invalidURL) }

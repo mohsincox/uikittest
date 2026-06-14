@@ -44,5 +44,8 @@ struct URLS {
         static func detail(id: Int) -> URL? { URL(string: "\(URLS.baseURL)/categories/\(id)") }
         static func update(id: Int) -> URL? { URL(string: "\(URLS.baseURL)/categories/\(id)") }
         static func delete(id: Int) -> URL? { URL(string: "\(URLS.baseURL)/categories/\(id)") }
+        static func dateWiseList(startDate: String, endDate: String) -> URL? {
+            URL(string: "\(URLS.baseURL)/date-wise-categories?start_date=\(startDate)&end_date=\(endDate)")
+        }
     }
 }

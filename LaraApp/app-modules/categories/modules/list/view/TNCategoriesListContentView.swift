@@ -22,6 +22,12 @@ struct TNCategoriesListContentView: View {
             } label: {
                 Text("Category Tab Screen")
             }
+
+            Button {
+                viewModel.onDateWiseCategoriesTapped()
+            } label: {
+                Text("Date wise Categories")
+            }
             
             List {
                             ForEach(viewModel.categories) { b in

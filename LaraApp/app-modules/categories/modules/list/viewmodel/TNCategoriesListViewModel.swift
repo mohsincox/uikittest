@@ -55,6 +55,10 @@ final class TNCategoriesListViewModel: TNViewModel {
         stepper.send(.categoryTabRequired)
     }
 
+    func onDateWiseCategoriesTapped() {
+        stepper.send(.dateWiseCategoriesRequired)
+    }
+
     func deleteCategory(id: Int) async {
         let result = await apiService.deleteCategory(id: id)
         await MainActor.run {
