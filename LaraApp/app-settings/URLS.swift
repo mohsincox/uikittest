@@ -37,6 +37,9 @@ struct URLS {
         static func detail(id: Int) -> URL? { URL(string: "\(URLS.baseURL)/books/\(id)") }
         static func update(id: Int) -> URL? { URL(string: "\(URLS.baseURL)/books/\(id)") }
         static func delete(id: Int) -> URL? { URL(string: "\(URLS.baseURL)/books/\(id)") }
+        static func dateWiseList(startDate: String, endDate: String) -> URL? {
+            URL(string: "\(URLS.baseURL)/date-wise-books?start_date=\(startDate)&end_date=\(endDate)")
+        }
     }
     
     enum Categories {

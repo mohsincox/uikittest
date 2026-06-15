@@ -60,4 +60,8 @@ final class TNBooksListViewModel: TNViewModel {
     func onBookTabTapped() {
         stepper.send(.bookTabRequired)
     }
+    
+    func onDateWiseBooksTapped() {
+        stepper.send(.dateWiseBooksRequired)
+    }
 }

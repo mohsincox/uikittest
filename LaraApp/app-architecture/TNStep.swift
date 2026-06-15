@@ -24,6 +24,7 @@ enum TNStep {
     case createBookRequired
     case editBookRequired(book: TNBookResponseBody)
     case bookTabRequired
+    case dateWiseBooksRequired
     
     // Category
     case categoryDetailRequired(category: TNCategoryResponseBody)

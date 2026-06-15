@@ -23,6 +23,12 @@ struct TNBooksListContentView: View {
                 Text("Book Tab Screen")
             }
             
+            Button {
+                viewModel.onDateWiseBooksTapped()
+            } label: {
+                Text("Date wise Books")
+            }
+            
             List {
                 ForEach(viewModel.books) { b in
                     Button {

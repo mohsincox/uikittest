@@ -91,4 +91,21 @@ final class TNBookApiService {
             return .failure(NetworkError.serverError(code: -1, message: error.localizedDescription))
         }
     }
+    
+    func getDateWiseBooks(startDate: String, endDate: String) async -> AppResult<[TNBookResponseBody]> {
+        guard let url = URLS.Books.dateWiseList(startDate: startDate, endDate: endDate) else {
+            return .failure(NetworkError.invalidURL)
+        }
+        do {
+            let reply = try await GlobalAPIServiceManager.shared.request(url: url, method: .get)
+            guard let data = reply.data, reply.isSuccess else {
+                return .failure(NetworkError.serverError(code: reply.statusCode, message: nil))
+            }
+            return .success(try JSONDecoder().decode([TNBookResponseBody].self, from: data))
+        } catch let e as DecodingError {
+            return .failure(NetworkError.decodingFailed(underlying: e))
+        } catch {
+            return .failure(NetworkError.serverError(code: -1, message: error.localizedDescription))
+        }
+    }
 }
