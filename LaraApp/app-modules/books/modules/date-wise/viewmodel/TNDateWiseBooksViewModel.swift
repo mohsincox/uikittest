@@ -14,6 +14,11 @@ final class TNDateWiseBooksViewModel: TNViewModel {
     @Published var books: [TNBookResponseBody] = []
     @Published var isLoading: Bool = false
     @Published var errorMessage: String = ""
+    @Published var isDateRangeSheetPresented: Bool = false
+    @Published var sheetDraftRangeStart: Date = Date()
+    @Published var sheetDraftRangeEnd: Date = Date()
+    @Published private(set) var sheetSelectionDayCount: Int = 7
+    @Published private(set) var sheetDatePickerToken = UUID()
     
     private let apiService: TNBookApiService
     
@@ -74,6 +79,24 @@ final class TNDateWiseBooksViewModel: TNViewModel {
         let newStart = Calendar.current.date(byAdding: .day, value: 7, to: Calendar.current.startOfDay(for: startDate)) ?? startDate
         endDate = newEnd
         startDate = min(newStart, newEnd)
+        loadBooks()
+    }
+    
+    func onDateRangeTapped() {
+        sheetDraftRangeStart = startDate
+        sheetDraftRangeEnd = endDate
+        sheetDatePickerToken = UUID()
+        isDateRangeSheetPresented = true
+    }
+    
+    func dismissDateRangeSheetWithoutApplying() {
+        isDateRangeSheetPresented = false
+    }
+    
+    func applySheetDateRange() {
+        isDateRangeSheetPresented = false
+        startDate = sheetDraftRangeStart
+        endDate = sheetDraftRangeEnd
         loadBooks()
     }
 }
